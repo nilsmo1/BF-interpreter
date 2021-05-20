@@ -94,7 +94,7 @@ def main():
     registers = [0]
     register_pointer = 0
     instruction_pointer = 0
-    input_list = sys.argv[1:]
+    input_list = sys.argv[2:]
     print("\nResult:")
     interpret(input_list, instructions, instruction_pointer, registers, register_pointer)
     print("\n")
