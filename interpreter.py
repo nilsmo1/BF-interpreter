@@ -57,7 +57,7 @@ def interpret(input_list: List[str],
         elif current_instruction == ">":
             register_pointer += 1
             if register_pointer >= len(registers):
-                registers.append(0)
+                registers[register_pointer] = 0
 
         elif current_instruction == "<":
             register_pointer -= 1
@@ -91,7 +91,7 @@ def main():
     with open(sys.argv[1], "r") as file:
         instructions = list(file.read().strip().replace(" ","").replace("\n",""))
         print(' '.join(instructions))
-    registers = [0]
+    registers = {0:0}
     register_pointer = 0
     instruction_pointer = 0
     input_list = sys.argv[2:]
